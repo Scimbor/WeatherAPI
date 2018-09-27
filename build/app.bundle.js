@@ -9065,13 +9065,13 @@ document.addEventListener('DOMContentLoaded', loadWeather);
 function getWeather(e) {
     var cityName = searchInput.value;
 
-    _http.http.get('http://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=metric&APPID=' + API_KEY).then(function (data) {
+    _http.http.get('https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=metric&APPID=' + API_KEY).then(function (data) {
         _ui.ui.showWeather(data);
     }).catch(function (err) {
         return console.log(err);
     });
 
-    _http.http.get('http://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&units=metric&APPID=' + API_KEY).then(function (data) {
+    _http.http.get('https://api.openweathermap.org/data/2.5/forecast?q=' + cityName + '&units=metric&APPID=' + API_KEY).then(function (data) {
         _ui.ui.showChart(data);
     }).catch(function (err) {
         return console.log(err);
@@ -9082,13 +9082,13 @@ function getWeather(e) {
 
 function loadWeather(e) {
     navigator.geolocation.getCurrentPosition(function (location) {
-        _http.http.get('http://api.openweathermap.org/data/2.5/weather?lat=' + location.coords.latitude + '&lon=' + location.coords.longitude + '&units=metric&APPID=' + API_KEY).then(function (data) {
+        _http.http.get('https://api.openweathermap.org/data/2.5/weather?lat=' + location.coords.latitude + '&lon=' + location.coords.longitude + '&units=metric&APPID=' + API_KEY).then(function (data) {
             _ui.ui.showWeather(data);
         }).catch(function (err) {
             return console.log(err);
         });
 
-        _http.http.get('http://api.openweathermap.org/data/2.5/forecast?lat=' + location.coords.latitude + '&lon=' + location.coords.longitude + '&units=metric&APPID=' + API_KEY).then(function (data) {
+        _http.http.get('https://api.openweathermap.org/data/2.5/forecast?lat=' + location.coords.latitude + '&lon=' + location.coords.longitude + '&units=metric&APPID=' + API_KEY).then(function (data) {
             _ui.ui.showForecast(data);
             _ui.ui.showChart(data);
         }).catch(function (err) {
