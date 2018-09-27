@@ -1,0 +1,353 @@
+body {
+  background: -webkit-gradient(linear, left top, right top, from(#020024), color-stop(8%, rgba(78, 9, 121, 0.857581)), to(#00d4ff));
+  background: linear-gradient(90deg, #020024 0%, rgba(78, 9, 121, 0.857581) 8%, #00d4ff 100%);
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+.containerBox {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  background-color: #262d36;
+}
+
+.containerBox .navbar .btn-searchInput {
+  background-color: #5abab8;
+  color: white;
+}
+
+.containerBox .jumbotron-custom {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("../img/raining.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/raining.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
+  width: 100vw;
+  margin: 0 0 10px 0;
+}
+
+.containerBox .jumbotron-custom::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(74deg, #777d93 31%, #6fe1ff 65%);
+  background-size: 400%;
+  -webkit-animation: animateAfter 30s linear infinite;
+          animation: animateAfter 30s linear infinite;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+
+.containerBox .jumbotron-custom .temp {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: right;
+  width: 50%;
+  height: 100%;
+  color: white;
+}
+
+.containerBox .jumbotron-custom .temp .descriptionWeahter::first-letter {
+  text-transform: uppercase;
+}
+
+.containerBox .jumbotron-custom .temp h3 {
+  font-weight: lighter;
+  font-size: 3rem;
+}
+
+.containerBox .jumbotron-custom .temp h2 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.containerBox .information-text {
+  padding: 30px 70px;
+  text-align: justify;
+}
+
+.containerBox .information-text h2 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.containerBox .information-text h4 {
+  font-size: 15px;
+  font-weight: lighter;
+}
+
+.containerBox .boxForecastMainStyle {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 300px;
+  color: white;
+}
+
+.containerBox .boxForecastMainStyle.boxFirsForecast {
+  background: linear-gradient(74deg, #89d8ff 18%, #63ccff 32%, #5ec5ff 47%, #4066fb 60%, #3f5efb 71%);
+}
+
+.containerBox .boxForecastMainStyle.boxFirsForecast img {
+  width: 50%;
+}
+
+.containerBox .boxForecastMainStyle.boxFirsForecast::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 25px solid #3f5efb;
+  z-index: 1;
+}
+
+.containerBox .boxForecastMainStyle.boxRestForecast .data,
+.containerBox .boxForecastMainStyle.boxRestForecast .description {
+  font-weight: lighter;
+  font-size: 1rem;
+}
+
+.containerBox .boxForecastMainStyle.boxRestForecast .temperature {
+  font-size: 2.7rem;
+  font-weight: bold;
+}
+
+.containerBox .boxRestForecastAfter-0::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  content: '';
+  background: linear-gradient(74deg, #777d93 31%, #6fe1ff 65%);
+  width: 100%;
+  height: 3px;
+  background-color: #262d36;
+}
+
+.containerBox .boxRestForecastAfter-1::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  content: '';
+  background: linear-gradient(74deg, #777d93 31%, #6fe1ff 65%);
+  width: 100%;
+  height: 3px;
+  background-color: #262d36;
+}
+
+.containerBox .boxRestForecastAfter-2::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  content: '';
+  background: linear-gradient(74deg, #777d93 31%, #6fe1ff 65%);
+  width: 100%;
+  height: 3px;
+  background-color: #262d36;
+}
+
+.containerBox .boxRestForecastAfter-3::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  content: '';
+  background: linear-gradient(74deg, #777d93 31%, #6fe1ff 65%);
+  width: 100%;
+  height: 3px;
+  background-color: #262d36;
+}
+
+.containerBox .boxRestForecastAfter-4::after {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  content: '';
+  background: linear-gradient(74deg, #777d93 31%, #6fe1ff 65%);
+  width: 100%;
+  height: 3px;
+  background-color: #262d36;
+}
+
+.containerBox .boxRestForecastAfter-5::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  content: '';
+  background: linear-gradient(74deg, #777d93 31%, #6fe1ff 65%);
+  width: 100%;
+  height: 3px;
+  background-color: #262d36;
+}
+
+.containerBox .boxRestForecastAfter-6::after {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  content: '';
+  background: linear-gradient(74deg, #777d93 31%, #6fe1ff 65%);
+  width: 100%;
+  height: 3px;
+  background-color: #262d36;
+}
+
+.containerBox canvas {
+  padding: 50px 15px;
+  background-color: #262d36;
+}
+
+.containerBox footer {
+  background-color: #2f3640;
+  color: white;
+  border-top: 3px solid #6fe1ff;
+  margin: 0 -15px;
+}
+
+@media only screen and (max-width: 767px) {
+  .containerBox {
+    padding: 25px 15px 0 15px;
+  }
+  .containerBox .jumbotron-custom {
+    margin: 0;
+  }
+  .containerBox .jumbotron-custom .temp {
+    padding-right: 0 !important;
+    text-align: center;
+    width: 100%;
+  }
+  .containerBox .boxForecastMainStyle.boxFirsForecast::after {
+    display: none;
+  }
+  .containerBox .boxRestForecastAfter-0::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    background: linear-gradient(74deg, #777d93 31%, #6fe1ff 65%);
+    width: 100%;
+    height: 3px;
+  }
+  .containerBox .boxRestForecastAfter-1::after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(74deg, #777d93 31%, #6fe1ff 65%);
+    width: 100%;
+    height: 3px;
+  }
+  .containerBox .boxRestForecastAfter-2::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    background: linear-gradient(74deg, #777d93 31%, #6fe1ff 65%);
+    width: 100%;
+    height: 3px;
+  }
+  .containerBox .boxRestForecastAfter-3::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    background: linear-gradient(74deg, #777d93 31%, #6fe1ff 65%);
+    width: 100%;
+    height: 3px;
+  }
+  .containerBox .boxRestForecastAfter-4::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    background: linear-gradient(74deg, #777d93 31%, #6fe1ff 65%);
+    width: 100%;
+    height: 3px;
+  }
+  .containerBox .boxRestForecastAfter-5::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    background: linear-gradient(74deg, #777d93 31%, #6fe1ff 65%);
+    width: 100%;
+    height: 3px;
+  }
+  .containerBox .boxRestForecastAfter-6::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    background: linear-gradient(74deg, #777d93 31%, #6fe1ff 65%);
+    width: 100%;
+    height: 3px;
+  }
+  .containerBox canvas {
+    height: 300px !important;
+  }
+}
+
+@-webkit-keyframes animateAfter {
+  0% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: 400% 0;
+  }
+}
+
+@keyframes animateAfter {
+  0% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: 400% 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

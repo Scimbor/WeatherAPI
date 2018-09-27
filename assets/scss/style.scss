@@ -1,0 +1,229 @@
+body {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(78, 9, 121, 0.8575805322128851) 8%, rgba(0, 212, 255, 1) 100%);
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.containerBox {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: #262d36;
+
+    .navbar {
+        .btn-searchInput {
+            background-color: #5abab8;
+            color: white;
+        }
+    }
+
+    .jumbotron-custom {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        background: linear-gradient(rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)), url('../img/raining.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 500px;
+        width: 100vw;
+        margin: 0 0 10px 0;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            height: 3px;
+            width: 100%;
+            background: linear-gradient(74deg, rgba(119, 125, 147, 1) 31%, rgba(111, 225, 255, 1) 65%);
+            background-size: 400%;
+            animation: animateAfter 30s linear infinite;
+            filter: blur(2px);
+        }
+
+        .temp {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: right;
+            width: 50%;
+            height: 100%;
+            color: white;
+
+            .descriptionWeahter::first-letter {
+                text-transform: uppercase;
+            }
+
+            h3 {
+                font-weight: lighter;
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 4rem;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .information-text {
+        padding: 30px 70px;
+        text-align: justify;
+
+        h2 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        h4 {
+            font-size: 15px;
+            font-weight: lighter;
+        }
+    }
+
+    .boxForecastMainStyle {
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 300px;
+        color: white;
+    }
+
+    .boxForecastMainStyle.boxFirsForecast {
+        background: linear-gradient(74deg, rgba(137, 216, 255, 1) 18%, rgba(99, 204, 255, 1) 32%, rgba(94, 197, 255, 1) 47%, rgba(64, 102, 251, 1) 60%, rgba(63, 94, 251, 1) 71%);
+
+        img {
+            width: 50%;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: -20px;
+            transform: translateY(-50%);
+            border-top: 25px solid transparent;
+            border-bottom: 25px solid transparent;
+            border-left: 25px solid rgba(63, 94, 251, 1);
+            z-index: 1;
+        }
+    }
+
+    .boxForecastMainStyle.boxRestForecast {
+
+        .data,
+        .description {
+            font-weight: lighter;
+            font-size: 1rem;
+        }
+
+        .temperature {
+            font-size: 2.7rem;
+            font-weight: bold;
+
+        }
+    }
+
+    @for $i from 0 through 6 {
+        .boxRestForecastAfter-#{$i}::after {
+            @if($i==4 or $i==6) {
+                display: none;
+            }
+
+            @else {
+                display: block;
+            }
+
+            position: absolute;
+
+            @if ($i%2==0 or $i==3 or $i==5) {
+                bottom: 0;
+            }
+
+            @else {
+                top: 0;
+            }
+
+            content: '';
+            background: linear-gradient(74deg, rgba(119, 125, 147, 1) 31%, rgba(111, 225, 255, 1) 65%);
+            width: 100%;
+            height: 3px;
+            background-color: #262d36;
+        }
+    }
+
+    canvas {
+        padding: 50px 15px;
+        background-color: #262d36;
+    }
+
+    footer {
+        background-color: #2f3640;
+        color: white;
+        border-top: 3px solid rgba(111, 225, 255, 1);
+        margin: 0 -15px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .containerBox {
+        padding: 25px 15px 0 15px;
+
+        .jumbotron-custom {
+            margin: 0;
+
+            .temp {
+                padding-right: 0 !important;
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        .boxForecastMainStyle.boxFirsForecast {
+            &::after {
+                display: none;
+            }
+        }
+
+        @for $i from 0 through 6 {
+            .boxRestForecastAfter-#{$i}::after {
+                display: block;
+                content: '';
+                position: absolute;
+                @if($i == 1){bottom:0}@else{top: 0;}
+                background: linear-gradient(74deg, rgba(119, 125, 147, 1) 31%, rgba(111, 225, 255, 1) 65%);
+                width: 100%;
+                height: 3px;
+            }
+        }
+
+        canvas{
+            height: 300px !important;
+        }
+    }
+}
+
+
+//Animations
+@keyframes animateAfter {
+    0% {
+        background-position: 0 0;
+    }
+
+    25% {
+        background-position: 100% 0;
+    }
+
+    50% {
+        background-position: 300% 0;
+    }
+
+    100% {
+        background-position: 400% 0;
+    }
+}
